@@ -13,8 +13,13 @@
         $list=$miconexion->consulta_lista();
         
         if ($list) {
-            $resultData = array('status' => true, 'message' => 'Existe Información...');
-            echo  json_encode($resultData);
+            if($list[0]==1){
+                $resultData = array('status' => true, 'message' => 'El cuestionario se encuentra habilitado...');
+                echo  json_encode($resultData);
+            }else{
+                $resultData = array('status' => false, 'message' => 'El cuestionario no se encuentra habilitado...');
+                echo  json_encode($resultData);
+            }
         }else{
             $resultData = array('status' => false, 'message' => 'No Existe Información...');
             echo  json_encode($resultData);

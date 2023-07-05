@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Inicio de sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Shortcut Icon" type="image/x-icon" href="../../../assets/icons/book.ico" />
+    <script src="../../../js/sweet-alert.min.js"></script>
+    
+    <link rel="stylesheet" href="../../../css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../../../css/normalize.css">
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/login.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script ../../../src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="../../../js/modernizr.js"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+    <script src="../../../js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../../../js/main.js"></script>
+</head>
+<body class="full-cover-background" style="background-image:url(../../../assets/img/fondo.jpg);">
+    <div class="form-container">
+        <p class="text-center" style="margin-top: 17px;">
+       </p>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">Crear una cuenta</h4>
+       <form action="../../../src/dll/AdministracionUsuario.php" method="POST">
+            <div class="group-material-login">
+              <input type="text" class="material-login-control" name="Nombre" id="Nombre" required="" maxlength="100" minlength="1">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account"></i> &nbsp; Nombres</label>
+            </div>
+            <div class="group-material-login">
+                <input type="text" class="material-login-control" name="Apellido" id="Apellido" required="" maxlength="100" minlength="1">
+                <span class="highlight-login"></span>
+                <span class="bar-login"></span>
+                <label><i class="zmdi zmdi-account"></i> &nbsp; Apellidos</label>
+            </div>
+            <div class="group-material-login">
+                <input type="text" class="material-login-control" name="Correo" id="Correo" required="" maxlength="100" minlength="1">
+                <span class="highlight-login"></span>
+                <span class="bar-login"></span>
+                <label><i class="zmdi zmdi-account"></i> &nbsp; Correo</label>
+            </div>
+            <div class="group-material-login">
+                <input type="text" class="material-login-control" name="Usuario" id="Usuario" required="" maxlength="50" minlength="1">
+                <span class="highlight-login"></span>
+                <span class="bar-login"></span>
+                <label><i class="zmdi zmdi-account"></i> &nbsp; Usuario</label>
+            </div>
+            <div class="group-material-login">
+              <input type="password" class="material-login-control" name="Contra" id="Contra" required="" maxlength="20" minlength="1">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña</label>
+            </div>
+            <div class="group-material">
+                <select class="material-control-login" id = "ComboBoxUsers" name = "ComboBoxUsers" required = "">
+                    <option value="" disabled="" selected="">Tipo de usuario</option>
+                    <option value="Docente">Docente</option>
+                </select>
+            </div>
+            <button class="btn-login" type="submit">Registrarse &nbsp; <i class="zmdi zmdi-arrow-right"></i></button>
+            <p class="text-center text-muted mt-5 mb-0">Tienes una cuenta? <a href="Login.html"
+                    class="fw-bold text-body"><u>Inicia Sesión</u></a></p>
+            <br>
+        </form>
+    </div>  
+</body>
+</html>
+

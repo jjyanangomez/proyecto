@@ -89,7 +89,7 @@
                     <img src="../../assets/img/Logo1.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección para registrar un nuevo Cuestionario para el sistema según el Banco de preguntas seleccionado, debes de llenar todos los campos del siguiente formulario para crear una nueva Preguntas.
+                    Bienvenido a la sección para registrar un nuevo Cuestionario para el sistema de evaluación, debes de llenar todos los campos del siguiente formulario para crearlo.
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
                 <div class="col-xs-12 lead">
                     <ol class="breadcrumb">
                       <li class="active">Nuevo Cuestionario</li>
-                      <li><a href="listCuestionarios.html">Lista de Cuestionarios</a></li>
+                      <li><a href="listCuestionarios.php">Lista de Cuestionarios</a></li>
                     </ol>
                 </div>
             </div>

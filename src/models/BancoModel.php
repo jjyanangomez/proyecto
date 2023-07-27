@@ -44,7 +44,7 @@ class BancoModel{
     public function ListBanco($idUser){
         $miconexion = new clase_mysqli;
         $miconexion->conectar(DBHOST, DBUSER, DBPASS, DBNAME);
-        $resSQL=$miconexion->consulta("SELECT bp.IdBanco,a.Area,ca.Carrera, bp.Asignatura, bp.Tema FROM bancopreguntas bp, area a, carrera ca WHERE bp.IdArea=a.IdArea AND bp.IdCarrera=ca.IdCarrera AND bp.IdUsuario = '$idUser'");
+        $resSQL=$miconexion->consulta("SELECT bp.IdBanco,a.Area AS 'Área',ca.Carrera, bp.Asignatura, bp.Tema FROM bancopreguntas bp, area a, carrera ca WHERE bp.IdArea=a.IdArea AND bp.IdCarrera=ca.IdCarrera AND bp.IdUsuario = '$idUser'");
         $resSQL=$miconexion->VerListBancos();
         //$this->Disconnect();
         return $resSQL;

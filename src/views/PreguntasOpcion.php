@@ -108,7 +108,7 @@
                     <img src="../../assets/img/Logo1.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección para registrar Preguntas para el sistema segun el Banco de preguntas seleccionado, debes de llenar todos los campos del siguiente formulario para crear una nueva Preguntas.
+                    Bienvenido a la sección para registrar Preguntas para el sistema según el Banco de preguntas seleccionado, debes de llenar todos los campos del siguiente formulario para crear una nueva Preguntas.
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
                 <div class="col-xs-12 lead">
                     <ol class="breadcrumb">
                       <li class="active">Nueva Pregunta</li>
-                      <li><a href="listBanco.html">Listado Preguntas</a></li>
+                      <li><a href="Preguntas.php">Listado Preguntas</a></li>
                     </ol>
                 </div>
             </div>

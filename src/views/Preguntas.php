@@ -109,7 +109,7 @@
                     <img src="../../assets/img/Logo1.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección que te permite visualizar las Preguntas segun el Banco de preguntas seleccionado, si desea puede actualizar la información o cambiarla segun sea necesario.
+                    Bienvenido a la sección que te permite visualizar las Preguntas según el Banco de preguntas seleccionado, si desea puede actualizar la información o cambiarla según sea necesario.
                 </div>
             </div>
         </div>

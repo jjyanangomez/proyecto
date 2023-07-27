@@ -13,8 +13,9 @@ $miconexion->conectar(DBHOST, DBUSER, DBPASS, DBNAME);
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $input = $_POST;
     if(isset($_POST['Nombre']) && $_POST['CodeCuestionario']){
+        $notaRedondeada = redondearNota($_POST['ResulEvaluacion']);
         $sql= "INSERT INTO `reportes`(`Nombre`, `Correo`, `CodeCuestionario`, `Puntaje`, `ResulEvaluacion`, `ListaPreTFCorrectas`, `ListaPreTFIncorrectas`, `ListaPreOpcionCorrectas`, `ListaPreOpcionIncorrectas`, `ListaPreEmpaCorrectas`, `ListaPreEmpaIncorrectas`, `FechaInicio`, `FechaFinal`,`Juego`) 
-            VALUES ('".$_POST['Nombre']."','".$_POST['Correo']."','".$_POST['CodeCuestionario']."','".$_POST['Puntaje']."','".$_POST['ResulEvaluacion']."','".$_POST['ListaPreTFCorrectas']."','".$_POST['ListaPreTFIncorrectas']."','".$_POST['ListaPreOpcionCorrectas']."','".$_POST['ListaPreOpcionIncorrectas']."','".$_POST['ListaPreEmpaCorrectas']."','".$_POST['ListaPreEmpaIncorrectas']."','".$_POST['FechaInicio']."','".$_POST['FechaFinal']."','".$_POST['Juego']."');";
+            VALUES ('".$_POST['Nombre']."','".$_POST['Correo']."','".$_POST['CodeCuestionario']."','".$_POST['Puntaje']."','".$notaRedondeada."','".$_POST['ListaPreTFCorrectas']."','".$_POST['ListaPreTFIncorrectas']."','".$_POST['ListaPreOpcionCorrectas']."','".$_POST['ListaPreOpcionIncorrectas']."','".$_POST['ListaPreEmpaCorrectas']."','".$_POST['ListaPreEmpaIncorrectas']."','".$_POST['FechaInicio']."','".$_POST['FechaFinal']."','".$_POST['Juego']."');";
         echo $sql;
         //echo json_encode($input);
         $resSQL=$miconexion->consulta($sql);
@@ -26,11 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             header("HTTP/1.1 400 Bad Request");
         }
     }else{
+
         $json = file_get_contents('php://input');
         $data = json_decode($json);
         //echo $data->Nombre;
+        $notaRedondeada = redondearNota($data->ResulEvaluacion);
         $sql= "INSERT INTO `reportes`(`Nombre`, `Correo`, `CodeCuestionario`, `Puntaje`, `ResulEvaluacion`, `ListaPreTFCorrectas`, `ListaPreTFIncorrectas`, `ListaPreOpcionCorrectas`, `ListaPreOpcionIncorrectas`, `ListaPreEmpaCorrectas`, `ListaPreEmpaIncorrectas`, `FechaInicio`, `FechaFinal`,`Juego`) 
-            VALUES ('$data->Nombre','$data->Correo','$data->CodeCuestionario','$data->Puntaje','$data->ResulEvaluacion','$data->ListaPreTFCorrectas','$data->ListaPreTFIncorrectas','$data->ListaPreOpcionCorrectas','$data->ListaPreOpcionIncorrectas','$data->ListaPreEmpaCorrectas','$data->ListaPreEmpaIncorrectas','$data->FechaInicio','$data->FechaFinal','$data->Juego');";
+            VALUES ('$data->Nombre','$data->Correo','$data->CodeCuestionario','$data->Puntaje','$notaRedondeada','$data->ListaPreTFCorrectas','$data->ListaPreTFIncorrectas','$data->ListaPreOpcionCorrectas','$data->ListaPreOpcionIncorrectas','$data->ListaPreEmpaCorrectas','$data->ListaPreEmpaIncorrectas','$data->FechaInicio','$data->FechaFinal','$data->Juego');";
         echo $sql;
         $resSQL=$miconexion->consulta($sql);
 
@@ -41,5 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             header("HTTP/1.1 400 Bad Request");
         }
     }
+}
+function redondearNota($nota) {
+    $decimales = 2;
+    $redondeado = round($nota, $decimales);
+    return $redondeado;
 }
 ?>

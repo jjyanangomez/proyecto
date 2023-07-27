@@ -87,7 +87,7 @@
                     <img src="../../assets/img/user02.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección para registrar nuevos docentes. Para registrar un docente debes de llenar todos los campos del siguiente formulario, también puedes ver el listado de docentes registrados
+                Bienvenido a la sección perfil del docente. A continuación, podrá examinar tu información personal y modificar la contraseña en caso de ser necesario.
                 </div>
             </div>
         </div>
@@ -102,7 +102,7 @@
         </div>
         <div class="container-fluid">
             <div class="container-flat-form">
-                <div class="title-flat-form title-flat-blue">Actualizar Informacion Personal</div>
+                <div class="title-flat-form title-flat-blue">Actualizar Información Personal</div>
                 <form autocomplete="off" method="post" id ="ActualizarInformacion" action ="../dll/metodosUsuario.php?id_User=<?php echo "".$_SESSION['Usuario']?>">
                     <div class="row">
                         <?php

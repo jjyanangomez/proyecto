@@ -89,7 +89,7 @@
                     <img src="../../assets/img/book.png" alt="user" class="img-responsive center-box" style="max-width: 110px;">
                 </div>
                 <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                    Bienvenido a la sección donde se presentan los Cuestionarios creados para el sistema, aqui podras actualizar y eliminar segun sea necesario.
+                    Bienvenido a la sección donde se presentan los Cuestionarios creados para el sistema, aquí podrá actualizar y eliminar según sea necesario.
                 </div>
             </div>
         </div>

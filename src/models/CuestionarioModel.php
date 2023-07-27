@@ -60,7 +60,7 @@ class CuestionarioModel{
     public function ListCuestionarios($idUser){
         $miconexion = new clase_mysqli;
         $miconexion->conectar(DBHOST, DBUSER, DBPASS, DBNAME);
-        $resSQL=$miconexion->consulta("SELECT cu.IdCuestionario AS ID, cu.NombreCuestionario AS Nombre, cu.CodigoCuestionario AS Codigo, cu.NumPreguntas AS Preguntas, cu.ValorCuestionario, cu.ValorPregunta , IF(cu.EstadoCuestionario, 'Activo', 'Inactivo') Estado, bp.Tema FROM cuestionarios cu, bancopreguntas bp WHERE cu.IdBanco = bp.IdBanco AND bp.IdUsuario = '$idUser'");
+        $resSQL=$miconexion->consulta("SELECT cu.IdCuestionario AS ID, cu.NombreCuestionario AS Nombre, cu.CodigoCuestionario AS 'Código', cu.NumPreguntas AS Preguntas, cu.ValorCuestionario, cu.ValorPregunta , IF(cu.EstadoCuestionario, 'Activo', 'Inactivo') Estado, bp.Tema FROM cuestionarios cu, bancopreguntas bp WHERE cu.IdBanco = bp.IdBanco AND bp.IdUsuario = '$idUser'");
         $resSQL=$miconexion->VerListCuestionarios();
         //$this->Disconnect();
         return $resSQL;
@@ -69,7 +69,7 @@ class CuestionarioModel{
     public function ListCuestionariosReport($idUser){
         $miconexion = new clase_mysqli;
         $miconexion->conectar(DBHOST, DBUSER, DBPASS, DBNAME);
-        $resSQL=$miconexion->consulta("SELECT cu.IdCuestionario AS 'Identificador', cu.NombreCuestionario, cu.CodigoCuestionario, IF(cu.EstadoCuestionario, 'Activo', 'Inactivo') Estado, bp.Tema As 'Tema Banco de Preguntas'  FROM cuestionarios cu, bancopreguntas bp, usuario us WHERE cu.IdBanco = bp.IdBanco AND bp.IdUsuario = us.IdUsuario AND us.IdUsuario = '$idUser'");
+        $resSQL=$miconexion->consulta("SELECT cu.IdCuestionario AS 'Identificador', cu.NombreCuestionario, cu.CodigoCuestionario AS 'Código Cuestionario', IF(cu.EstadoCuestionario, 'Activo', 'Inactivo') Estado, bp.Tema As 'Tema Banco de Preguntas'  FROM cuestionarios cu, bancopreguntas bp, usuario us WHERE cu.IdBanco = bp.IdBanco AND bp.IdUsuario = us.IdUsuario AND us.IdUsuario = '$idUser'");
         $resSQL=$miconexion->VerListCuestionariosReporte();
         //$this->Disconnect();
         return $resSQL;
